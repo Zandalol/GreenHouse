@@ -5,7 +5,8 @@
   "main": "express.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "heroku-postbuild": "cd react-app && npm install && npm run build"
   },
   "author": "Zandalol",
   "license": "ISC",
