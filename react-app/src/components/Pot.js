@@ -1,10 +1,12 @@
 import React from 'react';
+import Countdown from 'react-countdown';
 
 import './Pot.css';
 
 import iWater from './icons/water.png';
 import iLight from './icons/light.png';
 import iTemperature from './icons/temperature.png';
+
 
 export default class Pot extends React.Component {
 	constructor(props) {
@@ -16,12 +18,13 @@ export default class Pot extends React.Component {
 			humidity: 0,
 			light: 0,
 			temperature: 0,
+			remainingTime: 5000,
 		};
 	}
 
 	render() {
 		return (
-			<div className='Pot column'>
+			<div className='Pot column is-narrow'>
 				<div className='card'>
 					<div className='card-image'>
 						<p className='has-text-left is-italic has-text-grey'>Горшок №{ this.state.index }</p>
@@ -35,8 +38,8 @@ export default class Pot extends React.Component {
 						<div className="list">
 							<div className="list-item box has-background-info-light">
 								<div className="list-item-image">
-									<figure className="image is-64x64">
-										<img src={ iWater } />
+									<figure className="image is-32x32">
+										<img src={ iWater } alt='Water icon' />
 									</figure>
 								</div>
 								<div className="list-item-content">
@@ -47,8 +50,8 @@ export default class Pot extends React.Component {
 
 							<div className="list-item box has-background-warning-light">
 								<div className="list-item-image">
-									<figure className="image is-64x64">
-										<img src={ iLight } />
+									<figure className="image is-32x32">
+										<img src={ iLight } alt='Light icon' />
 									</figure>
 								</div>
 								<div className="list-item-content">
@@ -59,8 +62,8 @@ export default class Pot extends React.Component {
 
 							<div className="list-item box has-background-danger-light">
 								<div className="list-item-image">
-									<figure className="image is-64x64">
-										<img src={ iTemperature } />
+									<figure className="image is-32x32">
+										<img src={ iTemperature } alt='Temperature icon' />
 									</figure>
 								</div>
 								<div className="list-item-content">
@@ -70,9 +73,25 @@ export default class Pot extends React.Component {
 							</div>
 						</div>
 					</div>
-
+					<div className='has-text-centered has-text-weight-semibold is-size-5'>
+						<p>Времени осталось:</p>
+						<Countdown date={Date.now() + this.state.remainingTime}>
+							<TimeIsUp />
+						</Countdown>
+					</div>
 				</div>
 			</div>
 		);
+	}
+}
+
+
+class TimeIsUp extends React.Component {
+	render() {
+		return (
+			<div>
+				Пора пересаживать!
+			</div>
+		)
 	}
 }
