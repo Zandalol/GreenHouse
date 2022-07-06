@@ -1,4 +1,6 @@
 @import "../node_modules/bulma/css/bulma.css";
+@import "../node_modules/bulma-extensions/bulma-divider/dist/css/bulma-divider.min.css";
+@import "../node_modules/bulma-list/css/bulma-list.css";
 
 body {
   margin: 0;

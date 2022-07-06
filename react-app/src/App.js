@@ -2,7 +2,7 @@ import React from 'react';
 
 import './App.css';
 
-import Row from './components/Row'
+import Table from './components/Table'
 
 
 class App extends React.Component {
@@ -14,7 +14,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App container">
-				<Row />
+				<Table />
 			</div>
 		);
 	}
