@@ -35,7 +35,7 @@ export default class Table extends React.Component {
 				<div className="Table columns is-multiline is-centered">
 					{ Pots }
 				</div>
-				<div class="is-divider"></div>
+				<div className="is-divider"></div>
 			</div>
 		);
 	}

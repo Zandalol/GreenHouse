@@ -31,7 +31,7 @@
 			"remainingTime": 5000
 		},
 		{
-			"stage": 1,
+			"stage": 2,
 			"id": 4,
 			"image": "https://st3.depositphotos.com/7870458/13490/i/1600/depositphotos_134903912-stock-photo-fresh-cauliflower-on-a-farm.jpg",
 			"name": "Цветная капуста",
@@ -51,7 +51,7 @@
 			"remainingTime": 50000000
 		},
 		{
-			"stage": 2,
+			"stage": 3,
 			"id": 6,
 			"image": "https://static4.depositphotos.com/1000833/432/i/950/depositphotos_4321291-free-stock-photo-cabbage-background.jpg",
 			"name": "Капуста",
