@@ -16,19 +16,18 @@ class App extends React.Component {
 				3: []
 			},
 		};
+
+		setInterval(() => {
+			this.updateAPI()
+			console.log('ping')
+		}, 5000);
 	}
 
-	callBackendAPI = async () => {
-		const response = await fetch('/data');
-		const body = await response.json();
+	componentDidMount() {		
+		this.updateAPI()
+	}
 
-		if (response.status !== 200) {
-			throw Error(body.message)
-		}
-		return body;
-	};
-	
-	componentDidMount() {
+	updateAPI() {
 		this.callBackendAPI()
 			.then(res => {
 				this.setState({ data: res })
@@ -36,6 +35,18 @@ class App extends React.Component {
 			})
 			.catch(err => console.log(err));
 	}
+
+	callBackendAPI = async () => {
+		const rootUrl = process.env.NODE_ENV === "production" ? "http://localhost:5000" : ""
+		// https://gureev-greenhouse-app.herokuapp.com
+		const response = await fetch(rootUrl + '/data', {mode:'cors'});
+		const body = await response.json();
+		if (response.status !== 200) {
+			throw Error(body.message)
+		}
+		console.log(response)
+		return body;
+	}	
 
 	sortData() {
 		this.state.data.items.forEach(element => {
