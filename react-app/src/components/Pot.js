@@ -43,7 +43,7 @@ export default class Pot extends React.Component {
 					</div>
 
 					<div className='card-content'>
-						<p className='title is-size-4 has-text-centered'>{this.props.name}</p>
+						<p id='name' className='title is-size-4 has-text-centered'>{this.props.name}</p>
 						<div className="list">
 							<div className="list-item box has-background-info-light">
 								<div className="list-item-image">
@@ -113,8 +113,8 @@ export default class Pot extends React.Component {
 					</div>
 
 					<div className='card-content has-text-centered'>
-						<button className='button has-background-primary-light' onClick={e => { this.showModal(); }}>
-							Показать графики
+						<button className='button is-primary' onClick={e => { this.showModal(); }}>
+							<span className='is-size-5 has-text-weight-semibold'>Показать график</span>
 						</button>
 					</div>
 				</div>

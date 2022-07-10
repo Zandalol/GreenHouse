@@ -36,24 +36,24 @@ function Tables(props) {
 				<div className="columns is-multiline is-centered">
 					{createPots(sortItems(props.items, 1))}
 				</div>
-				<div className="is-divider"></div>
 			</div>
+			<div className="is-divider"></div>
 
 			<div className='Tables'>
 				<div className='title is-size-4 has-text-centered'>Стол №2 - Проращивание</div>
 				<div className="columns is-multiline is-centered">
 					{createPots(sortItems(props.items, 2))}
 				</div>
-				<div className="is-divider"></div>
 			</div>
+			<div className="is-divider"></div>
 
 			<div className='Tables'>
 				<div className='title is-size-4 has-text-centered'>Стол №3 - Готово к сбору</div>
 				<div className="columns is-multiline is-centered">
 					{createPots(sortItems(props.items, 3))}
 				</div>
-				<div className="is-divider"></div>
 			</div>
+			<div className="is-divider"></div>
 		</div>
 	)
 }

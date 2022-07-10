@@ -1,12 +1,12 @@
 import React from 'react';
+import { useQuery, QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
-import './App.css';
+import './styles/App.css';
 
 import Tables from './components/Tables';
-
-import { useQuery, QueryClient, QueryClientProvider } from 'react-query'
-
-import { ReactQueryDevtools } from 'react-query/devtools'
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 const queryClient = new QueryClient({
@@ -58,10 +58,12 @@ function App() {
 	}
 
 	return (
-		<div className="App container">
+		<div className="App">
+			<Navbar />
 			<Tables
 				items={data.items}
 			/>
+			<Footer />
 		</div>
 	)
 }
