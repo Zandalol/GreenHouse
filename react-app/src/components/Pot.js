@@ -10,10 +10,6 @@ import CountdownTimer from './CountdownTimer'
 
 
 export default class Pot extends React.Component {
-	// constructor(props) {
-	// 	super(props);
-	// }
-
 	render() {
 		return (
 			<div className='Pot column is-narrow'>
@@ -74,14 +70,4 @@ export default class Pot extends React.Component {
 			</div>
 		);
 	}
-}
-
-Pot.defaultProps = {
-	id: 'Pot_placeholder_id',
-	image: 'https://bulma.io/images/placeholders/1280x960.png',
-	name: 'Pot_placeholder_name',
-	humidity: 'Pot_placeholder_humidity',
-	light: 'Pot_placeholder_light',
-	temperature: 'Pot_placeholder_temperature',
-	remainingTime: 0,
 }

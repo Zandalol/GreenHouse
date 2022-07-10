@@ -32,7 +32,7 @@ app.get("/data", (req, res) => {
 		res.header("Access-Control-Allow-Origin", "*");
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 		let jsonData = JSON.parse(data);
-		console.log(jsonData);
+		res.type('application/json')
 		res.json(jsonData);
 	});
 });
