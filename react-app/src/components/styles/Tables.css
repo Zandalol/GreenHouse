@@ -1,0 +1,17 @@
+.Tables {
+	background: linear-gradient(180deg, rgba(250,255,209,1) 0%, rgba(222,255,208,1) 100%);
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.Tables:nth-child(2) {
+	background: linear-gradient(180deg, rgba(222,255,208,1) 0%, rgba(180,255,207,1) 100%);
+}
+
+.Tables:nth-child(3) {
+	background: linear-gradient(180deg, rgba(180,255,207,1) 0%, rgba(161,255,206,1) 100%);
+}
+
+.Tables .title {
+	padding-top: 0.5em !important;
+	margin-bottom: 1em !important;
+}

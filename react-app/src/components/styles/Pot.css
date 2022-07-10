@@ -1,0 +1,21 @@
+.Pot {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.card-content {
+	padding: 0.5em;
+}
+
+.list-item {
+	padding: 0.5em;
+	margin-bottom: 0em !important;
+}
+
+.title {
+	margin: 0.5em !important;
+}
+
+.column {
+	padding: 0;
+}

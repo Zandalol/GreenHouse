@@ -4,22 +4,28 @@ import './App.css';
 
 import Tables from './components/Tables';
 
-import {useQuery, QueryClient, QueryClientProvider} from 'react-query'
+import { useQuery, QueryClient, QueryClientProvider } from 'react-query'
 
 import { ReactQueryDevtools } from 'react-query/devtools'
 
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			refetchOnWindowFocus: false,
+		},
+	},
+})
+
 
 const localhostURL = 'http://localhost:5000';
 const herokuURL = 'https://gureev-greenhouse-app.herokuapp.com';
 const currentEnv = window.location.href.includes('localhost') ? localhostURL : herokuURL;
 const rootUrl = process.env.NODE_ENV === 'production' ? currentEnv : '';
 
-
 async function fetchData() {
 	const response = await fetch(rootUrl + '/data', {
-		mode:'cors',
+		mode: 'cors',
 		headers: {
 			Accept: 'application/json',
 		},
@@ -40,7 +46,7 @@ class ReactQueryWrapper extends React.Component {
 }
 
 
-function App() {	
+function App() {
 	const { data, status } = useQuery('data', fetchData);
 
 	if (status === 'loading') {
@@ -54,7 +60,7 @@ function App() {
 	return (
 		<div className="App container">
 			<Tables
-				items={ data.items }
+				items={data.items}
 			/>
 		</div>
 	)
