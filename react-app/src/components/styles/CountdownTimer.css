@@ -1,18 +1,3 @@
-.expired-notice {
-	border: 1px solid #ebebeb;
-	border-radius: 0.25rem;
-	text-align: center;
-}
-
-.expired-notice>span {
-	font-weight: bold;
-	color: red;
-}
-
-/* .show-counter {
-	max-width: 100%;
-} */
-
 .show-counter .countdown-link {
 	border: 1px solid #ebebeb;
 	border-radius: 0.25rem;

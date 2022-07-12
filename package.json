@@ -5,7 +5,7 @@
   "main": "express.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node express.js",
+    "start": "nodemon express.js",
     "heroku-postbuild": "cd react-app && npm install && npm run build"
   },
   "author": "Zandalol",
@@ -13,5 +13,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }

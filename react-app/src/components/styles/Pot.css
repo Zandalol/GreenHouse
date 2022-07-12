@@ -9,6 +9,10 @@
 	padding: 0 !important;
 }
 
+#show-graphs-button {
+	margin-bottom:0.5em;
+}
+
 .card-content {
 	padding-left: 1em;
 	padding-right: 1em;

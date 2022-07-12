@@ -1,5 +1,6 @@
 import React from 'react';
-import { useQuery, QueryClient, QueryClientProvider } from 'react-query'
+import { useEffect, useState } from 'react';
+import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
 import './styles/App.css';
@@ -26,9 +27,8 @@ const rootUrl = process.env.NODE_ENV === 'production' ? currentEnv : '';
 async function fetchData() {
 	const response = await fetch(rootUrl + '/data', {
 		mode: 'cors',
-		headers: {
-			Accept: 'application/json',
-		},
+		method: 'GET',
+		headers: { Accept: 'application/json' }
 	});
 	return response.json()
 }
@@ -47,7 +47,9 @@ class ReactQueryWrapper extends React.Component {
 
 
 function App() {
-	const { data, status } = useQuery('data', fetchData);
+	const { data, status, isFetching } = useQuery('data', fetchData, {
+		refetchInterval: 1000,
+	});
 
 	if (status === 'loading') {
 		return <p>Loading...</p>;
@@ -64,6 +66,7 @@ function App() {
 				items={data.items}
 			/>
 			<Footer />
+			{isFetching && <p>Refreshing your data...</p>}
 		</div>
 	)
 }
