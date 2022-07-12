@@ -65,11 +65,11 @@ fs.readFile('./data/data.json', (err, data) => {
 		element.light = element.latestMeasurements[element.latestMeasurements.length - 1].light;
 		element.temperature = element.latestMeasurements[element.latestMeasurements.length - 1].temperature;
 	});
-	// var intervalTime = setInterval(() => {
-	// 	initialData.items.forEach(element => {
-	// 		element.remainingTime == 0 ? element.remainingTime = 0 : element.remainingTime -= 1000
-	// 	});
-	// }, 1000);
+	var intervalTime = setInterval(() => {
+		initialData.items.forEach(element => {
+			element.remainingTime == 0 ? element.remainingTime = 0 : element.remainingTime -= 10000
+		});
+	}, 10000);
 });
 
 
